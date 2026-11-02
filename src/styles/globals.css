@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Si tienes estilos personalizados, van debajo */
+:root {
+  --foreground: #a4714d;
+}
+
+
+@layer base {
+  .font-wedding {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+.perspective {
+  perspective: 1200px;
+}
+
+.rotate-x-180 {
+  transform: rotateX(180deg);
+}
+

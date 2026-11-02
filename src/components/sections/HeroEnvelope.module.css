@@ -1,0 +1,282 @@
+.body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Title sobre*/
+.initials {
+  font-size: 80px;
+  fill: #ffffff; /* 👈 esto es clave en SVG */
+  letter-spacing: 3px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+
+.letterWrapper {
+  animation: floatEnvelope 4s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease;
+}
+
+.letter {
+  width: 520px;
+   transform: scale(0.75) !important; 
+   transform-origin: center !important;
+  animation: floatEnvelope 4s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  transition: filter 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.6s ease;
+}
+
+
+@keyframes envelopeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* SOBRE */
+.envelope {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5/3;
+  
+  background-image: url("/envelope/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: #c59c74;
+  background-blend-mode: multiply;
+  
+
+  border-radius: 8px;
+  cursor: pointer;
+  
+  box-shadow: 
+    inset 0 0 40px rgba(255,255,255,0.3), 
+    inset 0 0 15px rgba(164, 129, 96, 0.2);
+  animation: envelopeFloat 3s ease-in-out infinite;
+  
+}
+
+/* Triángulos con el mismo efecto de fibra */
+.envelope::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-left: 520px solid #d8bc98; 
+  border-top: 312px solid transparent;
+  border-radius: 8px;
+  z-index: 13;
+  filter: drop-shadow(3px 0 5px rgba(0,0,0,0.1));
+  /* Aplicamos la textura también a las tapas para consistencia */
+  background-image: url("/envelope/fondo.jpg");
+  background-blend-mode: multiply;
+}
+
+.envelope::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-right: 520px solid #cfb28e;
+  border-top: 312px solid transparent;
+  border-radius: 8px;
+  z-index: 13;
+  filter: drop-shadow(-3px 0 5px rgba(0,0,0,0.1));
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+  background-blend-mode: multiply;
+}
+
+/* HEADER */
+.envelopeHeader {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  list-style: none;
+  z-index: 8;
+}
+
+.envelopeHeader li {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.letterSheet {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  top: 5%;
+  left: 5%;
+  background: #fdfcf8; /* Blanco hueso para contrastar con el cartón */
+  padding: 40px 15px; /* Más padding arriba para los SVG */
+  transition: 1s;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  overflow: hidden; /* Para que los SVG no se salgan */
+}
+
+/* Animación sutil para las flores al aparecer */
+.letterUp svg {
+  animation: fadeInBotanical 2s ease-out forwards;
+}
+
+@keyframes fadeInBotanical {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 0.4; transform: scale(1); }
+}
+/* cuando abre */
+.letterUp {
+  z-index: 12;
+}
+
+.title {
+  text-align: center;
+  color: #FF5C8D;
+}
+
+.text {
+  color: #fa9ec0;
+}
+
+/* TAPA */
+.cover {
+  position: absolute;
+  margin-top: 3px;
+  width: 100%;
+  height: 98%;
+  fill: #c59c74;
+  transform-origin: top;
+  z-index: 10; /* 👈 más bajo que la carta */
+  border-radius: 10px;
+}
+
+/* animaciones */
+.open {
+  animation: open-letter 2s forwards;
+}
+
+.zoomIn {
+  animation: zoom-sheet-up 2s forwards;
+}
+
+/* sombras */
+.shadow {
+  width: 200px;
+  height: 10px;
+  background: #aaa;
+  margin-top: 10px;
+  border-radius: 50%;
+  opacity: .3;
+  animation: shadow-lift 3s infinite;
+}
+
+
+/* animation sobre */
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+}
+
+.sealPulse {
+  animation: softPulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* fin sello animation*/
+
+/* Para que cuando abra no se mueva de lugar, solo se desvanezca */
+.sealOpen {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.5);
+  pointer-events: none;
+  transition: all 0.7s ease;
+}
+
+/* keyframes EXACTOS */
+
+@keyframes open-letter {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(180deg); }
+}
+
+@keyframes zoom-sheet-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-80px); }
+}
+
+@keyframes letter-lift {
+  0%,100% { transform: translateY(0); }
+  60% { transform: translateY(-5px); }
+}
+
+@keyframes shadow-lift {
+  0%,100% { transform: scale(1); }
+  60% { transform: scale(.9); }
+}
+
+/* click hint */
+.clickHere {
+  width: 80px;
+  opacity: .3;
+  margin-top: 20px;
+  animation: tap 3s infinite;
+}
+
+@keyframes tap {
+  0%,100% { opacity: 0; }
+  50% { opacity: .5; }
+}
+
+@media (max-width: 768px) {
+  .body{
+    height: 110vh;
+    background-size: cover;       /* que cubra todo */
+    background-position: center;  /* centrada */
+    background-repeat: no-repeat; /* no repetir */
+  }
+
+  .letter {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .cover{
+    height: 100%;
+  }
+
+  .envelope::after {
+    border-left: 90vw solid #d8bc98;
+    border-top: calc(90vw * 3 / 5) solid transparent;
+    filter: drop-shadow(3px 0 5px rgba(0,0,0,0.1));
+    /* Aplicamos la textura también a las tapas para consistencia */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+  }
+
+  .envelope::before {
+    border-right: 90vw solid #d8bc98;
+    border-top: calc(90vw * 3 / 5) solid transparent;
+    filter: drop-shadow(-3px 0 5px rgba(0,0,0,0.1));
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+  }
+  
+}

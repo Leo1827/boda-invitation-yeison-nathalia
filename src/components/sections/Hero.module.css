@@ -1,0 +1,7 @@
+
+/*Tamaño margin top reproductor en pantallas 1600px*/
+@media (min-width: 1600px) {
+    .hightWeb{
+        margin-top: 4rem !important;
+    }
+}
