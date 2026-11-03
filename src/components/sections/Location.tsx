@@ -132,7 +132,7 @@ export default function Location() {
       <section className="relative w-full py-32 font-[family-name:var(--font-cormorant)] px-4 bg-[#F5F2ED] overflow-hidden min-h-[400px] flex flex-col items-center justify-center">
 
         {/* ===================================================
-           PALMERAS DECORATIVAS
+           flores DECORATIVAS
         =================================================== */}
         <div className="absolute -top-8 -left-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-50">
           <img
