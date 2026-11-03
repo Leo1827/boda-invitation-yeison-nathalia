@@ -207,16 +207,13 @@ export default function GiftSection() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="#B47C54"
-                      strokeWidth="1.2"
+                      strokeWidth="1.3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="w-8 h-8"
+                      className="w-10 h-10"
                     >
-                      <path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7" />
-                      <path d="M21 7H3v5h18V7z" />
-                      <path d="M12 22V7" />
-                      <path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z" />
-                      <path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z" />
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </div>
 

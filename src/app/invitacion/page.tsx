@@ -8,6 +8,7 @@ import Message from "@/components/sections/Message";
 import ImageParallax from "@/components/sections/ImageParallax";
 import GiftSection from "@/components/sections/GiftSection";
 import FooterSection from "@/components/sections/Footer";
+import Parents from "@/components/sections/Parents";
 
 export default function Invitacion() {
   return (
@@ -20,6 +21,16 @@ export default function Invitacion() {
       <Location />
       <DressCode />
       <GiftSection />
+      <Parents
+        groomParents={{
+          father: "Nombre del padre",
+          mother: "Nombre de la madre",
+        }}
+        brideParents={{
+          father: "Nombre del padre",
+          mother: "Nombre de la madre",
+        }}
+      />
       <Confirmation />
       <FooterSection />
     </main>

@@ -331,7 +331,7 @@ Les deseo mucha felicidad en esta nueva etapa.
               <span className="relative z-10">
                 {loading
                   ? "Registrando confirmación..."
-                  : "Enviar confirmación ✨"}
+                  : "CONFIRMAR ASISTENCIA"}
               </span>
             </button>
 
