@@ -34,3 +34,60 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+-- ==========================================
+-- TABLA DE CONFIRMACIONES DE BODA
+-- ==========================================
+
+CREATE TABLE public.confirmaciones (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
+    nombre TEXT NOT NULL
+        CHECK (char_length(trim(nombre)) BETWEEN 2 AND 100),
+
+    asistencia BOOLEAN NOT NULL,
+
+    acompanantes SMALLINT NOT NULL DEFAULT 0
+        CHECK (acompanantes BETWEEN 0 AND 3),
+
+    mensaje TEXT
+        CHECK (mensaje IS NULL OR char_length(mensaje) <= 500),
+
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+
+    CONSTRAINT acompanantes_si_asiste
+        CHECK (asistencia = TRUE OR acompanantes = 0)
+);
+
+-- ==========================================
+-- ACTIVAR SEGURIDAD RLS
+-- ==========================================
+
+ALTER TABLE public.confirmaciones
+ENABLE ROW LEVEL SECURITY;
+
+-- ==========================================
+-- PERMITIR REGISTRO DE CONFIRMACIONES
+-- ==========================================
+
+CREATE POLICY "Permitir registrar confirmaciones"
+ON public.confirmaciones
+FOR INSERT
+TO anon, authenticated
+WITH CHECK (true);
+
+-- ==========================================
+-- PERMISOS DE INSERCIÓN
+-- ==========================================
+
+GRANT INSERT ON TABLE public.confirmaciones
+TO anon, authenticated;
+
+
+
+
+@supabase/supabase-js: permite consultar e insertar información en PostgreSQL.
+
+@supabase/ssr: permite manejar la conexión y las cookies de sesión correctamente con Next.js

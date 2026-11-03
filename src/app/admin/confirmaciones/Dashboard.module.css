@@ -1,0 +1,443 @@
+
+.dashboard {
+  min-height: 100vh;
+  padding: 42px;
+  background: #f8f7f5;
+  color: #302d29;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #a47d50;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.header h1 {
+  margin: 9px 0 5px;
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 400;
+}
+
+.header p,
+.sectionHeader p {
+  margin: 0;
+  color: #8a837b;
+  font-size: 13px;
+}
+
+.logout,
+.exports button {
+  padding: 11px 17px;
+  border: 1px solid #e7dfd5;
+  border-radius: 8px;
+  background: white;
+  color: #51483e;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout:hover,
+.exports button:hover {
+  background: #f4eee7;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 23px;
+  border: 1px solid #eee9e3;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.statCard span {
+  color: #797168;
+  font-size: 12px;
+}
+
+.statCard strong {
+  color: #413a32;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.statCard small {
+  color: #aaa198;
+  font-size: 11px;
+}
+
+.content {
+  padding: 26px;
+  border: 1px solid #eee9e3;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 6px;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.exports {
+  display: flex;
+  gap: 9px;
+}
+
+.exports button:first-child {
+  border-color: #d8e8dc;
+  color: #39734d;
+}
+
+.exports button:last-child {
+  border-color: #ecdada;
+  color: #a34d4d;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select,
+.modal input,
+.modal select,
+.modal textarea {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #e8e2da;
+  border-radius: 8px;
+  background: white;
+  color: #413a32;
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.filters input {
+  flex: 1;
+}
+
+.filters select {
+  width: 210px;
+}
+
+.filters input:focus,
+.filters select:focus,
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  border-color: #b89a76;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+.table th {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eee9e3;
+  color: #8a8178;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f1eeea;
+  color: #625b53;
+  vertical-align: middle;
+}
+
+.table td strong {
+  color: #38332e;
+  font-weight: 600;
+}
+
+.yes,
+.no {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.yes {
+  background: #edf5ee;
+  color: #467b51;
+}
+
+.no {
+  background: #f9eeee;
+  color: #a45b5b;
+}
+
+.message {
+  max-width: 190px;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  gap: 7px;
+}
+
+.actions button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #eee7df;
+  border-radius: 7px;
+  background: white;
+  color: #766b5e;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #f5f0e9;
+}
+
+.actions button:last-child {
+  color: #b44d4d;
+}
+
+.empty {
+  padding: 35px !important;
+  text-align: center;
+  color: #999 !important;
+}
+
+.notice {
+  margin: 0 0 15px;
+  color: #567c5b;
+  font-size: 13px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(35, 29, 23, .48);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 27px;
+  border-radius: 15px;
+  background: white;
+}
+
+.modal h2 {
+  margin: 0 0 10px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.modal label {
+  color: #6d6257;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.modal textarea {
+  resize: vertical;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.modalActions button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cancel {
+  background: #f2efeb;
+  color: #655d54;
+}
+
+.save {
+  background: #a47d50;
+  color: white;
+}
+
+.modalActions button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+@media (max-width: 1000px) {
+  .dashboard {
+    padding: 25px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .table {
+    min-width: 850px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 20px 14px;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .logout {
+    padding: 9px;
+    font-size: 10px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .statCard {
+    padding: 15px;
+  }
+
+  .statCard strong {
+    font-size: 28px;
+  }
+
+  .content {
+    padding: 17px 12px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters select {
+    width: 100%;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee9e3;
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 9px 5px;
+    border: none;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    color: #92877c;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .table td.message {
+    max-width: none;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .empty {
+    display: block !important;
+    text-align: center !important;
+  }
+}
