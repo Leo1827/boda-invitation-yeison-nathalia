@@ -8,8 +8,9 @@ import { createPortal } from "react-dom";
 const locations = [
   {
     title: "CEREMONIA",
-    time: "4:00 PM",
-    place: "Iglesia de Santa Cruz",
+    date: "6 DE DICIEMBRE",
+    time: "6:00 PM",
+    place: "Parroquia del Espíritu Santo",
     mapUrl: "#",
     icon: (
       <svg
@@ -30,8 +31,10 @@ const locations = [
   },
   {
     title: "RECEPCIÓN",
-    time: "6:00 PM",
-    place: "Hacienda San Nicolás",
+    date: "6 DE DICIEMBRE",
+    time: "7:00 PM",
+    place: "Finca Terra Viva",
+    address: "Kilómetro 3 vía Palestina",
     mapUrl: "#",
     icon: (
       <svg
@@ -58,7 +61,6 @@ const locations = [
     ),
   },
 ];
-
 /* =========================================================
    COMPONENT
 ========================================================= */
@@ -95,7 +97,7 @@ export default function Location() {
         =================================================== */}
         <div className="absolute -top-8 -left-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-50">
           <img
-            src="/envelope/palmera1.png"
+            src="/envelope/flores/flor3.png"
             alt=""
             className="object-contain w-full h-full 
                       sepia-[0.25]
@@ -109,7 +111,7 @@ export default function Location() {
 
         <div className="absolute top-0 -right-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-180">
           <img
-            src="/envelope/palmera2.png"
+            src="/envelope/flores/flor1.png"
             alt=""
             className="object-contain w-full h-full
                       sepia-[0.25]
@@ -123,7 +125,7 @@ export default function Location() {
 
         <div className="absolute bottom-0 -right-24 w-48 h-48 md:w-64 md:h-64 opacity-70 mr-8 pointer-events-none">
           <img
-            src="/envelope/hojas_palmera.png"
+            src="/envelope/flores/flor2.png"
             alt=""
             className="object-contain w-full h-full rotate-190"
           />
@@ -131,7 +133,7 @@ export default function Location() {
 
         <div className="absolute top-52 mt-32 md:top-52 left-0 rotate-8 w-32 h-32 md:w-64 md:h-[680px] opacity-50 pointer-events-none">
           <img
-            src="/envelope/hojas_palmera.png"
+            src="/envelope/flores/flor2.png"
             alt=""
             className="object-contain w-full md:h-full h-[900px]"
           />
@@ -146,7 +148,7 @@ export default function Location() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-light italic text-[#4A4A4A] serif">
-            Riohacha - La Guajira
+            Pitalito - Huila
           </h1>
 
           <div className="w-24 h-[1px] bg-[#B47C54] mx-auto mt-3 opacity-50"></div>
@@ -186,11 +188,11 @@ export default function Location() {
               </p>
 
               <h3 className="text-2xl md:text-5xl font-light italic">
-                Riohacha - La Guajira
+                Pitalito - Huila
               </h3>
 
               <p className="text-sm md:text-lg opacity-90">
-                Ecohotel Akuaipa, Playa Valle de los Cangrejos
+                Finca turística Terra viva
               </p>
 
               {/* 
@@ -207,7 +209,7 @@ export default function Location() {
         </div>
 
         {/* ===================================================
-           INFO UBICACIONES
+            INFO UBICACIONES
         =================================================== */}
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-62 relative z-10">
           {locations.map((loc, index) => (
@@ -221,9 +223,23 @@ export default function Location() {
                 {loc.title}
               </h2>
 
+              {/* Lugar */}
+              <p className="text-lg md:text-xl font-light text-[#4A4A4A] mb-1">
+                {loc.place}
+              </p>
+
+              {/* Dirección, si existe */}
+              {loc.address && (
+                <p className="text-sm md:text-base text-[#4A4A4A] mb-2">
+                  {loc.address}
+                </p>
+              )}
+
               {/* Hora */}
-              <div className="space-y-2 mb-2 font-light text-[#4A4A4A]">
-                <p className="text-2xl font-[family-name:var(--font-pinyon)]">{loc.time}</p>
+              <div className="mb-2 font-light text-[#4A4A4A]">
+                <p className="text-2xl font-[family-name:var(--font-pinyon)]">
+                  {loc.time}
+                </p>
               </div>
 
             </div>
@@ -301,7 +317,7 @@ export default function Location() {
 
               {/* GOOGLE MAPS */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d92958.81731240061!2d-72.905358798641!3d11.54416120628057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDMzJzM5LjciTiA3MsKwNTMnMjEuNiJX!5e1!3m2!1ses-419!2sco!4v1783352476975!5m2!1ses-419!2sco"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d626552.1879695386!2d-76.1428847355892!3d1.8710394409414624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e250b91782d95a5%3A0x72a46bbd1efae31b!2sTERRA%20VIVA!5e1!3m2!1ses-419!2sco!4v1793674530605!5m2!1ses-419!2sco"
                 
                 className="w-full h-[75vh]"
                 style={{ border: 0 }}
