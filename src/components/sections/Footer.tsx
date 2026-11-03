@@ -158,7 +158,7 @@ export default function FooterSection() {
             italic
           "
         >
-          Nathalia y Jason
+          Yeison y Nathalia
         </p>
       </div>
 

@@ -56,7 +56,7 @@ export default function Preloader() {
         </p>
 
         <h1 className="text-4xl md:text-5xl italic text-[#4A4A4A] font-[family-name:var(--font-cormorant)]">
-          Jason & Nathalia
+          Yeison & Nathalia
         </h1>
       </div>
 

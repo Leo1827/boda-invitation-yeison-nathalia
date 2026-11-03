@@ -36,7 +36,7 @@ const msMadi = Ms_Madi({
 });
 
 export const metadata: Metadata = {
-  title: "Boda Jason & Nathalia",
+  title: "Boda Yeison & Nathalia",
   description: "Invitación digital",
 };
 
