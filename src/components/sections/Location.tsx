@@ -71,20 +71,59 @@ export default function Location() {
   ======================================================= */
   const [openModal, setOpenModal] = useState(false);
 
+  const [currentPhoto, setCurrentPhoto] = useState(0);
+
+  const galleryImages = [
+    {
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkcxxaylEVNk6oA8Il78_4yqkNwoJSBXtILrsJlGVwsbK3vOB0WjkwYy0&s=10",
+      alt: "Vista de las instalaciones de la finca turística Terra Viva",
+    },
+    {
+      src: "https://www.laspaginasamarillasencolombia.com/wp-content/uploads/elementor/thumbs/448212042_986696590132195_8504718402579062202_n-qt6ivqlaeecgubkkx4vaypbs2gwp6zhro8dyufy070.jpg",
+      alt: "Espacios naturales de la finca turística Terra Viva",
+    },
+    {
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmyDUVpgjV8TIZ5WiBS_MMtqeJKjseCoY2qqRNB9YqWo0ff29WJO2Ef8rp&s=10",
+      alt: "Espacios naturales de la finca turística Terra Viva",
+    },
+    {
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK1_HnBaZjrn9EY4aN7iHgeQwbZHiGuxqpdi5hLRBZVHb7xr9ceB9xR-k&s=10",
+      alt: "Espacios naturales de la finca turística Terra Viva",
+    },
+  ];
+
   /* =======================================================
      FUNCTIONS
   ======================================================= */
 
   const handleOpenModal = () => {
+    setCurrentPhoto(0);
     setOpenModal(true);
-    document.body.style.overflow = "hidden";
   };
 
   const handleCloseModal = () => {
     setOpenModal(false);
-    document.body.style.overflow = "auto";
   };
 
+  useEffect(() => {
+    if (!openModal) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenModal(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [openModal]);
   return (
     <>
       {/* =====================================================
@@ -264,74 +303,170 @@ export default function Location() {
         />
       </section>
 
-      {/* =====================================================
-        MODAL GOOGLE MAPS
-      ===================================================== */}
-      {openModal &&
-        typeof window !== "undefined" &&
-        createPortal(
-          <div
-            className="
-              fixed
-              inset-0
-              z-[999999]
-              flex
-              items-center
-              justify-center
-              bg-black/70
-              p-4
-            "
-          >
-            {/* CONTENEDOR MODAL */}
-            <div
-              className="
-                relative
-                w-full
-                max-w-5xl
-                bg-white
-                rounded-2xl
-                overflow-hidden
-                shadow-2xl
-              "
-            >
+{/* MODAL DE UBICACIÓN Y GALERÍA */}
+{openModal &&
+  typeof window !== "undefined" &&
+  createPortal(
+      <div
+        className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/70 p-3 sm:p-5"
+        onClick={handleCloseModal}
+        role="presentation"
+      >
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="terra-viva-title"
+          className="relative flex max-h-[94dvh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-[#FDFBF8] shadow-2xl"
+          onClick={(event) => event.stopPropagation()}
+        >
+          {/* ENCABEZADO */}
+          <div className="flex shrink-0 items-center justify-between gap-3 border-b border-[#B47C54]/20 px-4 py-3 sm:px-6 sm:py-4">
+            <div>
+              <p className="font-[family-name:var(--font-pinyon)] text-sm italic text-[#B47C54] sm:text-base">
+                Celebremos juntos
+              </p>
 
-              {/* BOTÓN CERRAR */}
-              <button
-                onClick={handleCloseModal}
-                className="
-                  absolute
-                  top-4
-                  right-4
-                  z-50
-                  w-10
-                  h-10
-                  rounded-full
-                  bg-white
-                  text-black
-                  text-xl
-                  shadow-lg
-                  hover:scale-105
-                  transition
-                "
+              <h2
+                id="terra-viva-title"
+                className="text-xl font-light text-[#4A4A4A] sm:text-2xl"
               >
-                ✕
-              </button>
+                Finca Terra Viva
+              </h2>
 
-              {/* GOOGLE MAPS */}
+              <p className="text-xs text-[#777] sm:text-sm">
+                Pitalito, Huila · Kilómetro 3 vía Palestina
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleCloseModal}
+              aria-label="Cerrar ventana de ubicación"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F0E8DE] text-xl text-[#76563F] transition hover:bg-[#E4D3C0]"
+            >
+              ×
+            </button>
+          </div>
+
+          {/* CONTENIDO CON DESPLAZAMIENTO */}
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+
+            {/* MAPA */}
+            <div className="relative">
               <iframe
+                title="Mapa de ubicación de Finca Terra Viva"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d626552.1879695386!2d-76.1428847355892!3d1.8710394409414624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e250b91782d95a5%3A0x72a46bbd1efae31b!2sTERRA%20VIVA!5e1!3m2!1ses-419!2sco!4v1793674530605!5m2!1ses-419!2sco"
-                
-                className="w-full h-[75vh]"
+                className="block h-[32dvh] min-h-[190px] w-full sm:h-[38dvh] sm:min-h-[260px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Finca+Terra+Viva+Pitalito+Huila"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-xs text-[#76563F] shadow-md transition hover:bg-white sm:text-sm"
+              >
+                <span aria-hidden="true">↗</span>
+                Abrir en Google Maps
+              </a>
             </div>
-          </div>,
-          document.body
-        )}
+
+            {/* GALERÍA FOTOGRÁFICA */}
+            <section className="px-4 py-5 sm:px-6 sm:py-6">
+              <div className="mb-4 flex items-end justify-between gap-3">
+                <div>
+                  <p className="mb-1 font-[family-name:var(--font-pinyon)] text-lg italic text-[#B47C54] sm:text-xl">
+                    Un lugar especial
+                  </p>
+
+                  <h3 className="text-xl font-light text-[#4A4A4A] sm:text-2xl">
+                    Descubre el lugar
+                  </h3>
+
+                  <p className="mt-1 text-xs text-[#888] sm:text-sm">
+                    Conoce un poco del lugar donde celebraremos.
+                  </p>
+                </div>
+
+                {/* CONTROLES DEL CARRUSEL */}
+                <div className="flex shrink-0 items-center gap-2">
+                  <span className="mr-1 text-xs text-[#777]">
+                    {currentPhoto + 1} / {galleryImages.length}
+                  </span>
+
+                  <button
+                    type="button"
+                    aria-label="Ver fotografía anterior"
+                    onClick={() =>
+                      setCurrentPhoto(
+                        (currentPhoto - 1 + galleryImages.length) %
+                          galleryImages.length
+                      )
+                    }
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B47C54]/30 text-lg text-[#76563F] transition hover:bg-[#F0E8DE]"
+                  >
+                    ‹
+                  </button>
+
+                  <button
+                    type="button"
+                    aria-label="Ver fotografía siguiente"
+                    onClick={() =>
+                      setCurrentPhoto(
+                        (currentPhoto + 1) % galleryImages.length
+                      )
+                    }
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B47C54]/30 text-lg text-[#76563F] transition hover:bg-[#F0E8DE]"
+                  >
+                    ›
+                  </button>
+                </div>
+              </div>
+
+              {/* IMAGEN ACTIVA */}
+              <div className="relative overflow-hidden rounded-xl bg-[#F0E8DE]">
+                <img
+                  key={galleryImages[currentPhoto].src}
+                  src={galleryImages[currentPhoto].src}
+                  alt={galleryImages[currentPhoto].alt}
+                  className="block h-[220px] w-full object-cover sm:h-[300px] md:h-[340px]"
+                />
+              </div>
+
+              {/* INDICADORES */}
+              <div className="mt-3 flex justify-center gap-2">
+                {galleryImages.map((photo, index) => (
+                  <button
+                    key={photo.src}
+                    type="button"
+                    aria-label={`Ver fotografía ${index + 1}`}
+                    aria-current={currentPhoto === index ? "true" : undefined}
+                    onClick={() => setCurrentPhoto(index)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      currentPhoto === index
+                        ? "w-8 bg-[#B47C54]"
+                        : "w-3 bg-[#B47C54]/30 hover:bg-[#B47C54]/60"
+                    }`}
+                  />
+                ))}
+              </div>
+            </section>
+          </div>
+
+          {/* PIE DEL MODAL */}
+          <div className="shrink-0 border-t border-[#B47C54]/15 bg-[#FDFBF8] px-4 py-3 text-center sm:px-6">
+            <p className="text-xs text-[#777] sm:text-sm">
+              Nos encantará compartir este día contigo.
+            </p>
+          </div>
+        </div>
+      </div>,
+      document.body
+      )}
+
     </>
   );
 }

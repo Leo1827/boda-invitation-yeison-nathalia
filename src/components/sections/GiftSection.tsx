@@ -32,11 +32,11 @@ export default function GiftSection() {
       <section className="relative w-full pt-8 pb-20 px-6 bg-[#F5F2ED] overflow-hidden">
 
         {/* CONTENIDO */}
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl py-12 mx-auto text-center">
 
           {/* SUBTÍTULO */}
           <span className="block text-[#B47C54] text-4xl md:text-4xl tracking-[0.3em] font-[family-name:var(--font-pinyon)] italic font-light">
-            Regalos
+            Lluvia de sobres
           </span>
 
           {/* ICONO / BOTÓN */}
@@ -55,7 +55,7 @@ export default function GiftSection() {
             "
           >
 
-            {/* ICONO REGALO */}
+          {/* ICONO SOBRE */}
             <div
               className="
                 w-24
@@ -74,7 +74,6 @@ export default function GiftSection() {
                 duration-300
               "
             >
-
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -84,14 +83,10 @@ export default function GiftSection() {
                 strokeLinejoin="round"
                 className="w-10 h-10"
               >
-                <path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7" />
-                <path d="M21 7H3v5h18V7z" />
-                <path d="M12 22V7" />
-                <path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z" />
-                <path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z" />
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
             </div>
-
             {/* TEXTO */}
             <span className="my-5 text-[#B47C54] tracking-[0.25em] uppercase text-sm">
               Ver mensaje
@@ -99,7 +94,7 @@ export default function GiftSection() {
           </button>
 
           {/* TÍTULO */}
-          <h2 className="text-4xl mx-3 md:text-6xl italic font-light text-[#4A4A4A] mb-8 font-[family-name:var(--font-cormorant)]">
+          <h2 className="text-4xl my-8 mx-3 md:text-6xl italic font-light text-[#4A4A4A] mb-8 font-[family-name:var(--font-cormorant)]">
             Su presencia es nuestro mejor regalo
           </h2>
         </div>

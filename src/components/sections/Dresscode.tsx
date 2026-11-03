@@ -14,7 +14,7 @@ export default function DressCode() {
 
         {/* IMAGEN */}
         <img
-          src="https://images.pexels.com/photos/13924590/pexels-photo-13924590.jpeg"
+          src="envelope/fondoDress.jpg"
           alt=""
           className="
             w-full
@@ -127,7 +127,7 @@ export default function DressCode() {
           >
 
             <span className="font-[family-name:var(--font-pinyon)] italic ">
-              Boda en la Playa
+              Noche elegante
             </span>
           </h2>
 
@@ -151,6 +151,7 @@ export default function DressCode() {
                 text-[#B47C54]
                 transition-transform
                 duration-500
+              
                 ${isOpen ? "rotate-180" : "rotate-0"}
               `}
               viewBox="0 0 24 24"
@@ -251,7 +252,7 @@ export default function DressCode() {
 
                       <li className="flex items-start gap-3">
                         <span className="text-[#B47C54]">✓</span>
-                        <span>Formal de playa / Semi-formal</span>
+                        <span>Formal / Semi-formal</span>
                       </li>
 
                       <li className="flex items-start gap-3">
@@ -261,7 +262,7 @@ export default function DressCode() {
 
                       <li className="flex items-start gap-3">
                         <span className="text-[#B47C54]">✓</span>
-                        <span>Camisa formal o guayabera elegante</span>
+                        <span>Camisa formal, elegante</span>
                       </li>
 
                       <li className="flex items-start gap-3">
@@ -389,7 +390,7 @@ export default function DressCode() {
 
                       <p>
                         <span className="text-neutral-900">
-                          No color blanco:
+                          No color blanco ni dorado:
                         </span>{" "}
                         reservado exclusivamente para la novia.
                       </p>
@@ -415,10 +416,11 @@ export default function DressCode() {
                 <span className="italic">
                   La idea es un look elegante pero fresco,
                 </span>{" "}
-                acorde a una boda en{" "}
+                acorde a una boda. {/*en{" "}
+                
                 <span className="italic">
                   La Guajira
-                </span>.
+                </span>.*/}
               </p>
             </div>
 

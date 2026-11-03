@@ -119,7 +119,7 @@ export default function FooterSection() {
           justify-center
           min-h-screen
           text-center
-          px-4
+          px-2
         "
       >
 
@@ -154,11 +154,13 @@ export default function FooterSection() {
             tracking-[0.3em]
             drop-shadow-sm
             font-light
-            font-[family-name:var(--font-ms-madi)]
+            font-[family-name:var(--font-cormorant)]
             italic
           "
         >
-          Yeison y Nathalia
+          <span className="flex justify-center mb-14">Invitan</span>
+          Yeison Urbano Urbano 
+          <span className="block md:text-4xl text-xl">Laura Nathalia Murcia Hoyos</span>
         </p>
       </div>
 
