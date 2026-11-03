@@ -165,8 +165,8 @@ export default function Location() {
               Al darle click a la imagen abre el modal
             */}
             <img
-              src="/envelope/guajira8.png"
-              alt="Riohacha - La Guajira"
+              src="/envelope/huila.png"
+              alt="Pitalito - Huila"
               onClick={handleOpenModal}
               className="
                 w-full
@@ -175,13 +175,15 @@ export default function Location() {
                 object-contain
                 block
                 cursor-pointer
+                md:pr-0
+                pr-14
               "
             />
 
             {/* =================================================
                TEXTO SOBRE IMAGEN
             ================================================= */}
-            <div className="absolute bottom-6 md:top-32 top-16 mt-38 md:mt-10 right-2 md:right-10 text-black">
+            <div className="absolute bottom-6 md:top-32 top-18 mt-38 md:mt-10 right-2 md:right-10 text-black">
 
               <p className="font-[family-name:var(--font-pinyon)] text-xl md:text-4xl opacity-80">
                 Lugar
