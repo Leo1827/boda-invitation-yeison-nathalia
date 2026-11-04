@@ -125,7 +125,7 @@ export default function GiftSection() {
 
           {/* TÍTULO */}
           <h2 className="text-4xl my-8 mx-3 md:text-6xl italic font-light text-[#4A4A4A] mb-8 font-[family-name:var(--font-cormorant)]">
-            Su presencia es nuestro mejor regalo
+            Eres parte importante de nuestra historia y queremos compartir contigo este día tan especial.
           </h2>
         </div>
 
