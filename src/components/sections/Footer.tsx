@@ -24,21 +24,21 @@ export default function FooterSection() {
 
           <path
             fill="none"
-            stroke="#bfa880"
+            stroke="#5B634B"
             strokeWidth="3"
             d="M0,150 C300,60 1100,220 1440,130"
           />
 
           <path
             fill="none"
-            stroke="#a8c0b8"
+            stroke="#8B957A"
             strokeWidth="2.5"
             d="M0,120 C400,200 900,40 1440,140"
           />
 
           <path
             fill="none"
-            stroke="#bfa880"
+            stroke="#9E885B"
             strokeWidth="2"
             d="M0,170 C350,100 1000,200 1440,110"
           />
@@ -72,19 +72,19 @@ export default function FooterSection() {
             will-change-transform
             scale-110
             parallax-mobile
-            sepia-[0.28]
+            sepia-[0.38]
             saturate-[0.75]
             brightness-[0.82]
             contrast-[0.9]
             hue-rotate-[-8deg]
           "
           style={{
-            backgroundImage: "url('/envelope/image_5.webp')",
+            backgroundImage: "url('/back/fondo.png')",
           }}
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-white/30 z-10" />
+        <div className="absolute inset-0 bg-white/10 z-10" />
       </div>
 
       {/* ===================================================
@@ -96,7 +96,7 @@ export default function FooterSection() {
           top-0
           left-0
           w-full
-          h-40
+          h-22
           bg-gradient-to-b
           from-white
           via-white/70
@@ -148,19 +148,17 @@ export default function FooterSection() {
         <p
           className="
             mt-4
-            text-2xl
+            text-3xl
             md:text-5xl
-            text-gray-900
-            tracking-[0.3em]
+            text-[#3E4334]
             drop-shadow-sm
-            font-light
-            font-[family-name:var(--font-cormorant)]
-            italic
+            font-light tracking-[0.1em]
+            font-[family-name:var(--font-pinyon)] italic
           "
         >
-          <span className="flex justify-center mb-14">Invitan</span>
-          Yeison Urbano Urbano 
-          <span className="block md:text-4xl text-xl">Laura Nathalia Murcia Hoyos</span>
+          <span className="flex justify-center mb-5 font-[family-name:var(--font-cormorant)]">Invitan</span>
+          Yeison Urbano y
+          <span className="block md:text-4xl text-2xl">Laura Nathalia Murcia Hoyos</span>
         </p>
       </div>
 
@@ -173,7 +171,7 @@ export default function FooterSection() {
           bottom-0
           left-0
           w-full
-          h-32
+          h-12
           bg-gradient-to-t
           from-white
           to-transparent
