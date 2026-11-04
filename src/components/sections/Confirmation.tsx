@@ -89,7 +89,7 @@ export default function Confirmation() {
       }
 
       // 4. ABRIR WHATSAPP
-      const whatsappNumber = "573023120469"; // Número de WhatsApp de los novios
+      const whatsappNumber = "573133822769"; // Número de WhatsApp de los novios
 
       const whatsappUrl =
         `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
