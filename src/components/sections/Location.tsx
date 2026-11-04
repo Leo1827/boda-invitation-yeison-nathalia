@@ -224,15 +224,15 @@ export default function Location() {
             ================================================= */}
             <div className="absolute bottom-6 md:top-32 top-18 mt-38 md:mt-10 right-2 md:right-10 text-[#556038]">
 
-              <p className="font-[family-name:var(--font-pinyon)] text-xl md:text-4xl opacity-80">
-                Lugar
+              <p className="font-[family-name:var(--font-pinyon)] font-bold text-xl md:text-4xl opacity-80">
+                Lugar de Recepción
               </p>
 
               <h3 className="text-2xl md:text-5xl font-light italic">
                 Pitalito - Huila
               </h3>
 
-              <p className="text-sm md:text-lg opacity-90">
+              <p className="text-sm font-bold md:text-lg opacity-90">
                 Finca turística Terra viva
               </p>
 
