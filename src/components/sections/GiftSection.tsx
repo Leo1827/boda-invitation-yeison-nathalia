@@ -65,7 +65,7 @@ export default function GiftSection() {
         </div>
 
           {/* SUBTÍTULO */}
-          <span className="block text-[#B47C54] text-4xl md:text-4xl tracking-[0.3em] font-[family-name:var(--font-pinyon)] italic font-light">
+          <span className="block mt-14 text-[#8f6343] text-4xl md:text-4xl tracking-[0.3em] font-[family-name:var(--font-pinyon)] font-bold">
             Lluvia de sobres
           </span>
 

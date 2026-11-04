@@ -182,7 +182,7 @@ export default function Location() {
            TÍTULO PRINCIPAL
         =================================================== */}
         <div className="relative z-10 text-center mb-4">
-          <span className="text-[#B47C54] font-[family-name:var(--font-pinyon)] italic tracking-[0.3em] text-sm md:text-3xl block font-light">
+          <span className="text-[#946442] font-[family-name:var(--font-pinyon)] italic tracking-[0.3em] text-2xl md:text-3xl block font-bold">
             Donde comienza nuestra historia
           </span>
 

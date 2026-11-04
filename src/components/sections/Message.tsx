@@ -50,7 +50,7 @@ export default function Message() {
         viewport={{ once: true }}
         className="relative z-10 max-w-2xl text-center flex flex-col gap-1"
       >
-        <p className="text-[#394225] font-bold font-[family-name:var(--font-cormorant)] text-xl md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
+        <p className="text-[#394225] italic font-bold font-[family-name:var(--font-cormorant)] text-2xl md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
           “Revístanse de sentimientos 
           <br></br>de misericordia, bonda, humildad, mansedumbre y paciencia.
           <br></br>Sopórtense mutuamente y perdónense. 
