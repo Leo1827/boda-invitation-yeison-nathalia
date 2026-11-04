@@ -231,7 +231,7 @@ export default function Hero() {
         </div>
 
         {/* FECHA */}
-        <div className="mt-2 mb-6 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.4em] drop-shadow-md">
+        <div className="mt-2 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.4em] drop-shadow-md">
           06 · 12 · 2026
         </div>
 
@@ -266,7 +266,7 @@ export default function Hero() {
         {/* REPRODUCTOR - POSICIÓN ORIGINAL */}
         <div
           className="
-            mt-[18rem]
+            mt-[14rem]
             md:mt-[15rem]
             min-[1600px]:mt-16
             flex
