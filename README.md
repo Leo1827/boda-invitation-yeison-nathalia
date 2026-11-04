@@ -91,3 +91,67 @@ TO anon, authenticated;
 @supabase/supabase-js: permite consultar e insertar información en PostgreSQL.
 
 @supabase/ssr: permite manejar la conexión y las cookies de sesión correctamente con Next.js
+
+
+1. Verde Oliva Oscuro (Letras principales y títulos)
+Nombre descriptivo: Verde Oliva Profundo / Deep Olive Text
+
+Código HEX: #3E4334
+
+Código RGB: (62, 67, 52)
+
+Uso recomendado en una invitación web: Ideal para los títulos principales, caligrafía destacada y subtítulos importantes (como "Nuestra Boda", nombres de los novios y fechas), garantizando excelente legibilidad sobre fondos claros sin el contraste agresivo de un negro puro.
+
+2. Verde Oliva Medio (Hojas de la estructura botánica)
+Nombre descriptivo: Verde Oliva Botánico / Botanical Olive Medium
+
+Código HEX: #5B634B
+
+Código RGB: (91, 99, 75)
+
+Uso recomendado en una invitación web: Perfecto para las ilustraciones de follaje, iconos secundarios, líneas divisorias y acentos gráficos medianos que acompañan la estructura visual.
+
+3. Verde Salvia (Detalles botánicos y acentos sutiles)
+Nombre descriptivo: Verde Salvia Suave / Soft Sage Leaf
+
+Código HEX: #8B957A
+
+Código RGB: (139, 149, 122)
+
+Uso recomendado en una invitación web: Excelente para pequeños detalles florales, tallos difuminados, viñetas secundarias o estados de desplazamiento (hover) sutiles en elementos interactivos.
+
+4. Dorado Envejecido (Bordes, marcos e iconos)
+Nombre descriptivo: Dorado Vintage Antiguo / Antique Muted Gold
+
+Código HEX: #9E885B
+
+Código RGB: (158, 136, 91)
+
+Uso recomendado en una invitación web: Reservado para el marco perimetral elegante, líneas ornamentales, iconos decorativos (como la iglesia o los marcadores de ubicación) y detalles de lujo discreto.
+
+5. Crema Cálido (Fondo principal del sitio web)
+Nombre descriptivo: Crema Pergamino / Warm Parchment Cream
+
+Código HEX: #F7F3EA
+
+Código RGB: (247, 243, 234)
+
+Uso recomendado en una invitación web: El tono base ideal para el fondo de toda la página o secciones principales, aportando esa textura visual limpia, cálida y de aspecto clásico analógico.
+
+6. Beige Champaña (Sombras, texturas y contenedores)
+Nombre descriptivo: Champaña Degradado / Champagne Shadow & Card BG
+
+Código HEX: #EBE3D0
+
+Código RGB: (235, 227, 208)
+
+Uso recomendado en una invitación web: Útil para tarjetas de contenido flotantes (cards), fondos de secciones alternas, o áreas de contenedores de texto que requieran sutil profundidad.
+
+7. Marrón Sepia (Textos secundarios y contrastes de lectura)
+Nombre descriptivo: Marrón Sepia Cálido / Warm Sepia Text
+
+Código HEX: #4D4336
+
+Código RGB: (77, 67, 54)
+
+Uso recomendado en una invitación web: Excelente para los párrafos de texto corrido, versículos o notas informativas (como la dirección de la parroquia y la recepción), aportando una lectura muy armónica y orgánica.

@@ -158,11 +158,11 @@ export default function Hero() {
       {/* FONDO */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/envelope/imagen_2.jpg"
+          src="/back/fondo1.png"
           alt="Mar"
           fill
           priority
-          className="object-cover object-center brightness-[0.55]"
+          className="object-cover object-center "
         />
       </div>
 
@@ -183,7 +183,7 @@ export default function Hero() {
           "
         >
           <Image
-            src="/envelope/imagen_1.jpg"
+            src="/back/fondo2.jpeg"
             alt="Cristian & Daniela"
             fill
             priority
@@ -193,46 +193,45 @@ export default function Hero() {
       </div>
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/20 z-0" />
+      <div className="absolute inset-0 bg-black/10 z-0" />
 
       {/* TEXTO */}
-      <div className="relative z-10 text-white px-4 flex flex-col items-center">
+      <div className="relative z-10 text-[#3E4334] px-4 flex flex-col items-center">
 
-        {/*
+      {/*  
         <p className="font-[family-name:var(--font-cormorant)] uppercase text-3xl md:text-5xl drop-shadow-md">
           Nuestra boda
         </p>
 
-        <h1 className="flex flex-col items-center mt-4 drop-shadow-lg font-[family-name:var(--font-ms-madi)] italic">
-          <span className="text-5xl md:text-6xl font-light tracking-widest">
-            Cristian
+        <h1 className="flex flex-col items-center mt-8 drop-shadow-lg font-[family-name:var(--font-ms-madi)] italic">
+          <span className="text-4xl md:text-6xl font-light tracking-widest my-4">
+            Yeison Borja y
           </span>
-          <span className="text-4xl">y</span>
-          <span className="text-5xl md:text-6xl font-light tracking-widest">
-            Daniela
+          <span className="text-4xl mb-4 md:text-6xl font-light tracking-widest">
+            Laura Nathalia Murcia
           </span>
         </h1>
         */}
 
         <div>
           <img
-            src="/envelope/logo1.png"
-            className="w-62 h-50"
+            src="/envelope/letras.png"
+            className="w-100 h-40"
             alt="logo"
           />
         </div>
 
         {/* SEPARADOR */}
         <div className="flex items-center justify-center w-4/5 mx-auto my-2">
-          <div className="flex-grow h-px bg-white/70" />
+          <div className="flex-grow h-px bg-[#556038]" />
 
-          <span className="px-4 text-white text-xl leading-none">♥</span>
+          <span className="px-4 text-[#556038] text-xl leading-none">♥</span>
 
-          <div className="flex-grow h-px bg-white/70" />
+          <div className="flex-grow h-px bg-[#556038]/70" />
         </div>
 
         {/* FECHA */}
-        <div className="mt-2 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.4em] drop-shadow-md">
+        <div className="mt-2 mb-6 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.4em] drop-shadow-md">
           06 · 12 · 2026
         </div>
 
@@ -257,9 +256,9 @@ export default function Hero() {
             whitespace-nowrap
           "
         >
-          <Music2 className="w-4 h-4 text-white/90 shrink-0" />
+          <Music2 className="w-4 h-4 text-[#3E4334] shrink-0" />
 
-          <span className="text-sm md:text-base text-white font-light tracking-wide text-center">
+          <span className="text-sm md:text-base text-[#3E4334] font-light tracking-wide text-center">
             Dale play para escuchar esta canción
           </span>
         </div>
@@ -294,8 +293,8 @@ export default function Hero() {
               w-12 h-12
               shrink-0
               rounded-full
-              bg-white/20
-              hover:bg-white/30
+              bg-[#3E4334]/20
+              hover:bg-[#3E4334]/30
               focus-visible:outline
               focus-visible:outline-2
               focus-visible:outline-offset-4
@@ -306,9 +305,9 @@ export default function Hero() {
             "
           >
             {playing ? (
-              <Pause className="w-5 h-5 text-white" />
+              <Pause className="w-5 h-5 text-[#3E4334]" />
             ) : (
-              <Play className="w-5 h-5 text-white ml-1" />
+              <Play className="w-5 h-5 text-[#3E4334] ml-1" />
             )}
           </button>
 
@@ -321,8 +320,8 @@ export default function Hero() {
               w-11 h-11
               shrink-0
               rounded-full
-              bg-white/10
-              hover:bg-white/20
+              bg-[#3E4334]
+              hover:bg-[#3E4334]/20
               focus-visible:outline
               focus-visible:outline-2
               focus-visible:outline-offset-4
@@ -337,7 +336,7 @@ export default function Hero() {
 
           {/* TEXTO */}
           <div className="flex flex-col leading-none min-w-0">
-            <span className="text-xs uppercase tracking-[0.18em] text-white/70">
+            <span className="text-xs uppercase tracking-[0.18em] text-[#3E4334]/70">
               {playing ? "Reproduciendo" : "Nuestra boda"}
             </span>
 
@@ -346,8 +345,25 @@ export default function Hero() {
             </span>
           </div>
         </div>
+        
       </div>
-
+      {/* ===================================================
+         DESVANECIDO INFERIOR
+      =================================================== */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          w-full
+          h-12
+          bg-gradient-to-t
+          from-white
+          to-transparent
+          z-10
+          pointer-events-none
+        "
+      />
     </section>
   );
 }
