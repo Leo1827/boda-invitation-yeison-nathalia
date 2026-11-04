@@ -337,7 +337,7 @@ export default function Hero() {
           {/* TEXTO */}
           <div className="flex flex-col leading-none min-w-0">
             <span className="text-xs uppercase tracking-[0.18em] text-[#3E4334]/70">
-              {playing ? "Reproduciendo" : "Nuestra boda"}
+              {playing ? "Reproduciendo" : ""}
             </span>
 
             <span className="text-sm md:text-base font-light tracking-wide whitespace-nowrap">
