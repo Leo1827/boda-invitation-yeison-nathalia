@@ -153,7 +153,7 @@ export default function Confirmation() {
       <div
         className="relative min-h-[850px] bg-cover bg-center flex items-center justify-center py-36 px-5"
         style={{
-          backgroundImage: "url('/envelope/image_10.webp')",
+          backgroundImage: "url('/back/fondo.png')",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
@@ -233,7 +233,7 @@ export default function Confirmation() {
                   onClick={() => setAttendance("yes")}
                   className={`rounded-xl border p-4 text-sm transition-all duration-300 ${
                     attendance === "yes"
-                      ? "border-[#bfa880] bg-[#bfa880]/20 text-white"
+                      ? "border-[#556038] bg-[#556038]/20 text-white"
                       : "border-white/20 bg-white/5 text-white/60 hover:border-white/50"
                   }`}
                 >
@@ -249,7 +249,7 @@ export default function Confirmation() {
                   }}
                   className={`rounded-xl border p-4 text-sm transition-all duration-300 ${
                     attendance === "no"
-                      ? "border-[#bfa880] bg-[#bfa880]/20 text-white"
+                      ? "border-[#556038] bg-[#556038]/20 text-white"
                       : "border-white/20 bg-white/5 text-white/60 hover:border-white/50"
                   }`}
                 >
@@ -320,9 +320,9 @@ export default function Confirmation() {
               disabled={loading}
               className="
                 group relative w-full overflow-hidden
-                bg-[#bfa880] hover:bg-[#aa916b]
+                bg-[#556038] hover:bg-[#aa916b]
                 disabled:opacity-50 disabled:cursor-not-allowed
-                text-[#29231d] py-4 rounded-full
+                text-[#fff] py-4 rounded-full
                 font-medium text-xs tracking-[0.2em]
                 uppercase transition-all duration-500
                 hover:scale-[1.02] shadow-xl

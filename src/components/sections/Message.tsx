@@ -50,7 +50,7 @@ export default function Message() {
         viewport={{ once: true }}
         className="relative z-10 max-w-2xl text-center flex flex-col gap-1"
       >
-        <p className="text-[#4a4a4a] font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
+        <p className="text-[#556038] font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
           “Revístanse de sentimientos 
           <br></br>de misericordia, bonda, humildad, mansedumbre y paciencia.
           <br></br>Sopórtense mutuamente y perdónense. 
@@ -59,14 +59,14 @@ export default function Message() {
 
         {/* SEPARADOR */}
         <div className="flex items-center justify-center w-4/8 mx-auto mt-8">
-          <div className="flex-grow h-px bg-[#556038]" />
+          <div className="flex-grow h-px bg-[#a64e1b98]" />
 
-          <span className="px-1 text-[#556038] text-xl leading-none">♡</span>
+          <span className="px-1 text-[#a64e1b98] text-xl leading-none">♡</span>
 
-          <div className="flex-grow h-px bg-[#556038]/70" />
+          <div className="flex-grow h-px bg-[#a64e1b98]/70" />
         </div>
 
-        <p className="text-[#556038] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
+        <p className="text-[#a64e1b98] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
             — Colosenses 3. 12-14
         </p>
       </motion.div>

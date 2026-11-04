@@ -223,11 +223,11 @@ export default function Hero() {
 
         {/* SEPARADOR */}
         <div className="flex items-center justify-center w-4/5 mx-auto my-2">
-          <div className="flex-grow h-px bg-[#556038]" />
+          <div className="flex-grow h-px bg-[#a64e1b5d]" />
 
-          <span className="px-4 text-[#556038] text-xl leading-none">♥</span>
+          <span className="px-4 text-[#a64e1b5d] text-xl leading-none">♥</span>
 
-          <div className="flex-grow h-px bg-[#556038]/70" />
+          <div className="flex-grow h-px bg-[#a64e1b5d]/70" />
         </div>
 
         {/* FECHA */}
