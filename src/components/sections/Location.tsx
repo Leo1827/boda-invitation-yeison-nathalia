@@ -16,7 +16,7 @@ const locations = [
       <svg
         viewBox="0 0 28 28"
         fill="none"
-        stroke="#B47C54"
+        stroke="#556038"
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -40,7 +40,7 @@ const locations = [
       <svg
         viewBox="0 0 28 28"
         fill="none"
-        stroke="#B47C54"
+        stroke="#556038"
         strokeWidth="1.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -186,7 +186,7 @@ export default function Location() {
             Donde comienza nuestra historia
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-light italic text-[#4A4A4A] serif">
+          <h1 className="text-4xl md:text-6xl font-light italic text-[#556038] serif">
             Pitalito - Huila
           </h1>
 
@@ -222,7 +222,7 @@ export default function Location() {
             {/* =================================================
                TEXTO SOBRE IMAGEN
             ================================================= */}
-            <div className="absolute bottom-6 md:top-32 top-18 mt-38 md:mt-10 right-2 md:right-10 text-black">
+            <div className="absolute bottom-6 md:top-32 top-18 mt-38 md:mt-10 right-2 md:right-10 text-[#556038]">
 
               <p className="font-[family-name:var(--font-pinyon)] text-xl md:text-4xl opacity-80">
                 Lugar
@@ -241,7 +241,7 @@ export default function Location() {
               */}
               <button
                 onClick={handleOpenModal}
-                className="bg-[#A3A786] hover:shadow-2xl shadow-xl rounded-sm my-2 p-1 px-8 text-white"
+                className="bg-[#556038] hover:shadow-2xl shadow-xl rounded-sm my-2 p-1 px-8 text-white"
               >
                 Ver mapa
               </button>

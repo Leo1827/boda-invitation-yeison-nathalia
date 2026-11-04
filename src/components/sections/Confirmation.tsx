@@ -15,114 +15,114 @@ export default function Confirmation() {
 
   const supabase = createClient();
   
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  if (loading) return;
+    if (loading) return;
 
-  if (!name.trim()) {
-    setFeedback("Por favor, escribe tu nombre completo.");
-    return;
-  }
-
-  setLoading(true);
-  setFeedback("");
-
-  // Abrimos una pestaña durante el clic para evitar
-  // que el navegador bloquee la apertura de WhatsApp.
-  const whatsappWindow = window.open("about:blank", "_blank");
-
-  try {
-    // 1. PREPARAR INFORMACIÓN
-    const isAttending = attendance === "yes";
-
-    const guestData = {
-      nombre: name.trim(),
-      asistencia: isAttending,
-      acompanantes: isAttending ? Number(companions) : 0,
-      mensaje: message.trim() || null,
-    };
-
-    // 2. GUARDAR EN SUPABASE
-    const { error } = await supabase
-      .from("confirmaciones")
-      .insert(guestData);
-
-    if (error) {
-      console.error("Error Supabase:", error);
-      throw new Error("No pudimos registrar tu confirmación. Inténtalo nuevamente.");
+    if (!name.trim()) {
+      setFeedback("Por favor, escribe tu nombre completo.");
+      return;
     }
 
-    // 3. CONSTRUIR MENSAJE DE WHATSAPP
-    let whatsappMessage = "";
+    setLoading(true);
+    setFeedback("");
 
-    if (isAttending) {
-      const totalPeople = 1 + Number(companions);
+    // Abrimos una pestaña durante el clic para evitar
+    // que el navegador bloquee la apertura de WhatsApp.
+    const whatsappWindow = window.open("about:blank", "_blank");
 
-      whatsappMessage = `
-¡Hola! ✨
+    try {
+      // 1. PREPARAR INFORMACIÓN
+      const isAttending = attendance === "yes";
 
-Soy ${name.trim()}.
+      const guestData = {
+        nombre: name.trim(),
+        asistencia: isAttending,
+        acompanantes: isAttending ? Number(companions) : 0,
+        mensaje: message.trim() || null,
+      };
 
-¡Confirmo mi asistencia a su boda! 🤍
+      // 2. GUARDAR EN SUPABASE
+      const { error } = await supabase
+        .from("confirmaciones")
+        .insert(guestData);
 
-${Number(companions) > 0
-  ? `Asistiré con ${companions} acompañante(s). Total de personas: ${totalPeople}.`
-  : "Asistiré personalmente."}
+      if (error) {
+        console.error("Error Supabase:", error);
+        throw new Error("No pudimos registrar tu confirmación. Inténtalo nuevamente.");
+      }
 
-${message.trim() ? `\nMensaje para los novios:\n${message.trim()}` : ""}
+      // 3. CONSTRUIR MENSAJE DE WHATSAPP
+      let whatsappMessage = "";
 
-¡Será un honor acompañarlos en este día tan especial! 💍
-      `;
-    } else {
-      whatsappMessage = `
-¡Hola! ✨
+      if (isAttending) {
+        const totalPeople = 1 + Number(companions);
 
-Soy ${name.trim()}.
+        whatsappMessage = `
+  ¡Hola! ✨
 
-Lamento informarles que no podré asistir a su boda. 🤍
+  Soy ${name.trim()}.
 
-Les deseo mucha felicidad en esta nueva etapa.
+  ¡Confirmo mi asistencia a su boda! 🤍
 
-¡Un abrazo!
-      `;
+  ${Number(companions) > 0
+    ? `Asistiré con ${companions} acompañante(s). Total de personas: ${totalPeople}.`
+    : "Asistiré personalmente."}
+
+  ${message.trim() ? `\nMensaje para los novios:\n${message.trim()}` : ""}
+
+  ¡Será un honor acompañarlos en este día tan especial! 💍
+        `;
+      } else {
+        whatsappMessage = `
+  ¡Hola! ✨
+
+  Soy ${name.trim()}.
+
+  Lamento informarles que no podré asistir a su boda. 🤍
+
+  Les deseo mucha felicidad en esta nueva etapa.
+
+  ¡Un abrazo!
+        `;
+      }
+
+      // 4. ABRIR WHATSAPP
+      const whatsappNumber = "573023120469"; // Número de WhatsApp de los novios
+
+      const whatsappUrl =
+        `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+          whatsappMessage
+        )}`;
+
+      setFeedback("¡Tu respuesta quedó registrada! Gracias por acompañarnos. 🤍");
+
+      // Limpiar formulario
+      setName("");
+      setAttendance("yes");
+      setCompanions("0");
+      setMessage("");
+
+      if (whatsappWindow) {
+        whatsappWindow.location.href = whatsappUrl;
+      } else {
+        window.location.href = whatsappUrl;
+      }
+
+    } catch (error) {
+      whatsappWindow?.close();
+
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : "Ocurrió un error al registrar tu respuesta."
+      );
+
+    } finally {
+      setLoading(false);
     }
-
-    // 4. ABRIR WHATSAPP
-    const whatsappNumber = "573023120469"; // Número de WhatsApp de los novios
-
-    const whatsappUrl =
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-        whatsappMessage
-      )}`;
-
-    setFeedback("¡Tu respuesta quedó registrada! Gracias por acompañarnos. 🤍");
-
-    // Limpiar formulario
-    setName("");
-    setAttendance("yes");
-    setCompanions("0");
-    setMessage("");
-
-    if (whatsappWindow) {
-      whatsappWindow.location.href = whatsappUrl;
-    } else {
-      window.location.href = whatsappUrl;
-    }
-
-  } catch (error) {
-    whatsappWindow?.close();
-
-    setFeedback(
-      error instanceof Error
-        ? error.message
-        : "Ocurrió un error al registrar tu respuesta."
-    );
-
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   return (
     <section className="relative w-full overflow-hidden">

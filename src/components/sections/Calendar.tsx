@@ -45,7 +45,7 @@ export default function CalendarSection() {
         <div className="max-w-5xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-8 mb-4">
 
             {/* Lado Izquierdo: El Gran Día */}
-            <div className="flex flex-col my-8 pb-4 items-center justify-center relative z-10">
+            <div className="flex flex-col text-[#556038] my-8 pb-4 items-center justify-center relative z-10">
                 <h2 className="font-[family-name:var(--font-pinyon)] italic text-5xl md:text-5xl mb-2 opacity-90 font-light tracking-[0.2em]">
                     Faltan
                 </h2>

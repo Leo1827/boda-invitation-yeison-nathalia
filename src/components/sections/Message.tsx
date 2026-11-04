@@ -48,15 +48,26 @@ export default function Message() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
-        className="relative z-10 max-w-2xl text-center flex flex-col gap-4"
+        className="relative z-10 max-w-2xl text-center flex flex-col gap-1"
       >
-        <p className="text-[#4a4a4a] font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-lg leading-relaxed md:px-0 px-16">
-          “Revístanse de sentimientos de misericordia, bonda, humildad, mansedumbre y paciencia.”
+        <p className="text-[#4a4a4a] font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
+          “Revístanse de sentimientos 
+          <br></br>de misericordia, bonda, humildad, mansedumbre y paciencia.
+          <br></br>Sopórtense mutuamente y perdónense. 
+          <br></br>Y por encima de todo, revístanse del amor, que es el vínculo de la unidad perfecta.”
         </p>
-        
-        <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
-          “Sopórtense mutuamente y perdónense. Y por encima de todo, revístanse del amor, que es el vínculo de la unidad perfecta.”
-            <br/>— Colosenses 3. 12-14
+
+        {/* SEPARADOR */}
+        <div className="flex items-center justify-center w-4/8 mx-auto mt-8">
+          <div className="flex-grow h-px bg-[#556038]" />
+
+          <span className="px-1 text-[#556038] text-xl leading-none">♡</span>
+
+          <div className="flex-grow h-px bg-[#556038]/70" />
+        </div>
+
+        <p className="text-[#556038] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
+            — Colosenses 3. 12-14
         </p>
       </motion.div>
 
