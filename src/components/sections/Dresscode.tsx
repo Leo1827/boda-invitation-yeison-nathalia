@@ -98,11 +98,11 @@ export default function DressCode() {
               relative
               z-10
               uppercase
-              tracking-[0.35em]
-              text-[11px]
+              tracking-[0.30em]
+              text-[15px]
+              my-4 font-bold
               md:text-xs
               text-[#b48b67]
-              font-light
             "
           >
             Código de Vestimenta
@@ -131,38 +131,27 @@ export default function DressCode() {
             </span>
           </h2>
 
-          {/* FLECHA */}
-          <div
-            className="
-              relative
-              z-10
-              mt-6
-              flex
-              items-center
-              justify-center
-              transition-transform
-              duration-500
-            "
-          >
-            <svg
+          {/* INDICADOR */}
+          <div className="
+            relative
+            z-10
+            mt-6
+            flex
+            items-center
+            justify-center
+          ">
+            <span
               className={`
-                w-5
-                h-5
+                text-[15px]
+                tracking-[0.35em]
+                font-medium
                 text-[#B47C54]
-                transition-transform
+                transition-all
                 duration-500
-              
-                ${isOpen ? "rotate-180" : "rotate-0"}
               `}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
             >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
+              {isOpen ? "CERRAR" : "CLICK AQUI"}
+            </span>
           </div>
         </button>
       </div>
@@ -207,167 +196,22 @@ export default function DressCode() {
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-[#e9ddd1] -translate-x-1/2" />
 
               {/* =================================================
-                 CABALLEROS
-              ================================================= */}
-              <div className="space-y-7">
-
-                {/* HEADER */}
-                <div className="flex items-center gap-4 pb-4 border-b border-[#ece3da]">
-
-                  {/* ICONO */}
-                  <div className="w-11 h-11 rounded-full border border-[#dcc7b1] flex items-center justify-center">
-
-                    <svg
-                      className="w-5 h-5 text-[#B47C54] stroke-[1.2]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                    >
-                      <path d="M4 3h16l-3 9H7L4 3z" />
-                      <path d="M12 3v18M7 12v9m10-9v9" />
-                    </svg>
-                  </div>
-
-                  <h3
-                    className="
-                      text-3xl
-                      text-[#4A4A4A]
-                      font-light
-                      font-[family-name:var(--font-cormorant)]
-                    "
-                  >
-                    <span className="italic">Caballeros</span>
-                  </h3>
-                </div>
-
-                {/* TEXTO */}
-                <div className="space-y-5 text-[15px] text-neutral-600 leading-relaxed font-light">
-
-                  <div>
-                    <p className="uppercase tracking-[0.25em] text-[11px] text-[#B47C54] mb-4">
-                      Permitido & sugerido
-                    </p>
-
-                    <ul className="space-y-3">
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Formal / Semi-formal</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Traje ligero o pantalón de vestir con saco</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Camisa formal, elegante</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Corbata opcional</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Todos los colores y patrones son bienvenidos</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* EVITAR */}
-                  <div className="pt-2">
-
-                    <p className="uppercase tracking-[0.25em] text-[11px] text-[#B47C54] mb-4">
-                      A evitar
-                    </p>
-
-                    <div className="space-y-2 text-sm text-neutral-500">
-
-                      <div className="flex items-center gap-2">
-                        <span className="text-red-300">✕</span>
-                        <span className="line-through">
-                          No jeans
-                        </span>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <span className="text-red-300">✕</span>
-                        <span className="line-through">
-                          No camisas hawaianas
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* =================================================
                  DAMAS
               ================================================= */}
               <div className="space-y-7">
 
-                {/* HEADER */}
-                <div className="flex items-center gap-4 pb-4 border-b border-[#ece3da]">
-
-                  {/* ICONO */}
-                  <div className="w-11 h-11 rounded-full border border-[#dcc7b1] flex items-center justify-center">
-
-                    <svg
-                      className="w-5 h-5 text-[#B47C54] stroke-[1.2]"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                    >
-                      <path d="M8 3h8l2 5-3 3v10H9V11L6 8l2-5z" />
-                    </svg>
-                  </div>
-
-                  <h3
-                    className="
-                      text-3xl
-                      text-[#4A4A4A]
-                      font-light
-                      font-[family-name:var(--font-cormorant)]
-                    "
-                  >
-                    <span className="italic">Damas</span>
-                  </h3>
-                </div>
 
                 {/* TEXTO */}
                 <div className="space-y-5 text-[15px] text-neutral-600 leading-relaxed font-light">
 
-                  <div>
-                    <p className="uppercase tracking-[0.25em] text-[11px] text-[#B47C54] mb-4">
-                      Permitido & sugerido
-                    </p>
+                {/* HEADER */}
+                <div className="flex items-center gap-4 pb-4 border-b border-[#ece3da]">
 
-                    <ul className="space-y-3">
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Formal veraniego / Summer chic</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Vestidos largos o midi, telas ligeras y elegantes</span>
-                      </li>
-
-                      <li className="flex items-start gap-3">
-                        <span className="text-[#B47C54]">✓</span>
-                        <span>Colores vivos, tropicales o estampados</span>
-                      </li>
-                    </ul>
-                  </div>
-
+                </div>
                   {/* RESTRICCIÓN */}
                   <div className="pt-2">
 
-                    <p className="uppercase tracking-[0.25em] text-[11px] text-[#B47C54] mb-4">
+                    <p className="uppercase tracking-[0.25em] text-[14px] text-[#B47C54] mb-4">
                       Restricción especial
                     </p>
 
