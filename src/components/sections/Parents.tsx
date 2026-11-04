@@ -29,7 +29,7 @@ export default function Parents({
           <span />
         </div>
 
-        <h2>Padres de los novios</h2>
+        <h2 className="italic">Padres de los novios</h2>
         <p>Con amor y gratitud</p>
       </div>
 

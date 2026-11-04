@@ -15,7 +15,7 @@
 }
 
 .eyebrow {
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 3px;
   color: #a88a69;
   font-weight: 500;
@@ -106,7 +106,7 @@
   }
 
   .eyebrow {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
@@ -116,12 +116,12 @@
   }
 
   .label {
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
 
   .family p {
-    font-size: 15px;
+    font-size: 16px;
     overflow-wrap: anywhere;
   }
 

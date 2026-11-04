@@ -23,12 +23,12 @@ export default function Invitacion() {
       <GiftSection />
       <Parents
         groomParents={{
-          father: "Nombre del padre",
-          mother: "Nombre de la madre",
+          father: "Manuel Urbano",
+          mother: "Marleny Urbano",
         }}
         brideParents={{
-          father: "Nombre del padre",
-          mother: "Nombre de la madre",
+          father: "Hilde Murcia",
+          mother: "Maria Judith Hoyos",
         }}
       />
       <Confirmation />
