@@ -124,6 +124,7 @@ export default function FooterSection() {
       >
 
         {/* TÍTULO */}
+        {/* 
         <h1
           className="
             text-6xl
@@ -142,23 +143,23 @@ export default function FooterSection() {
           "
         >
           BODA
-        </h1>
+        </h1>*/}
 
         {/* NOMBRES */}
         <p
           className="
             mt-4
-            text-3xl
+            text-4xl
             md:text-5xl
             text-[#3E4334]
             drop-shadow-sm
-            font-light tracking-[0.1em]
-            font-[family-name:var(--font-pinyon)] italic
+            font-bold tracking-[0.2em]
+            font-[family-name:var(--font-pinyon)] 
           "
         >
-          <span className="flex justify-center mb-5 font-[family-name:var(--font-cormorant)]">Invitan</span>
+          <span className="flex justify-center mb-6 pb-4 font-[family-name:var(--font-cormorant)]">Invitan</span>
           Yeison Urbano y
-          <span className="block md:text-4xl text-2xl">Laura Nathalia Murcia Hoyos</span>
+          <span className="block md:text-4xl text-2xl">Laura Nathalia Murcia</span>
         </p>
       </div>
 
