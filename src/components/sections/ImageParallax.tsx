@@ -9,7 +9,7 @@ interface ImageParallaxProps {
 }
 
 export default function ImageParallax({
-  imageUrl = "/envelope/imagen_3.webp",
+  imageUrl = "/envelope/image3.jpeg",
   height = "400px",
 }: ImageParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
