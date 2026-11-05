@@ -75,7 +75,7 @@ export default function CalendarSection() {
                 {/* Imagen Principal en Arco */}
                 <div className="relative w-52 mr-16 h-96 md:w-70 md:h-[450px] overflow-hidden rounded-full shadow-lg">
                     <img
-                        src="/envelope/image1.jpeg"
+                        src="/envelope/image3.jpeg"
                         alt="El Beso"
                         className="object-cover w-full h-full"
                     />
