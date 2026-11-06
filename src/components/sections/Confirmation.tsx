@@ -275,7 +275,6 @@ export default function Confirmation() {
                   <option value="0">Solo yo</option>
                   <option value="1">1 acompañante</option>
                   <option value="2">2 acompañantes</option>
-                  <option value="3">3 acompañantes</option>
                 </select>
 
                 <p className="text-white/40 text-xs">
