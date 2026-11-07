@@ -52,7 +52,7 @@ export default function Message() {
       >
         <p className="text-[#394225] italic font-bold font-[family-name:var(--font-cormorant)] text-2xl md:text-xl lg:text-lg leading-relaxed md:px-0 px-10">
           “Revístanse de sentimientos 
-          <br></br>de misericordia, bonda, humildad, mansedumbre y paciencia.
+          <br></br>de misericordia, bondad, humildad, mansedumbre y paciencia.
           <br></br>Sopórtense mutuamente y perdónense. 
           <br></br>Y por encima de todo, revístanse del amor, que es el vínculo de la unidad perfecta.”
         </p>
