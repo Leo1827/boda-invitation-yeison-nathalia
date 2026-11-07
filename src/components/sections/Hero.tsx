@@ -2,12 +2,12 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Play, Pause, RotateCcw, Music2 } from "lucide-react";
 import "@/components/sections/Hero.module.css";
 
-export default function Hero() {
+function HeroContent() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
   const animationRef = useRef<number | null>(null);
@@ -365,5 +365,13 @@ export default function Hero() {
         "
       />
     </section>
+  );
+}
+
+export default function Hero() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#f4ede4]" />}>
+      <HeroContent />
+    </Suspense>
   );
 }
