@@ -14,7 +14,7 @@ export default function HeroEnvelopeMovil() {
 
     // Tiempo suficiente para la animación elegante
     setTimeout(() => {
-      router.push("/invitacion");
+      router.push("/invitacion?autoplay=true");
     }, 400);
   };
 

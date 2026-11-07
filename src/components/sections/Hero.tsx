@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Play, Pause, RotateCcw, Music2 } from "lucide-react";
 import "@/components/sections/Hero.module.css";
 
@@ -66,44 +67,44 @@ export default function Hero() {
     animationRef.current = requestAnimationFrame(animate);
   };
 
+  const searchParams = useSearchParams();
+  const autoStartedRef = useRef(false);
+
+  const shouldAutoPlay = searchParams.get("autoplay") === "true";
+
   // DETENER GUÍA SI EL USUARIO INTERACTÚA
   useEffect(() => {
-    const handleUserInteraction = () => {
-      stopGuidedScroll();
-    };
+    if (!shouldAutoPlay || autoStartedRef.current) return;
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const scrollKeys = [
-        "ArrowDown",
-        "ArrowUp",
-        "PageDown",
-        "PageUp",
-        "Home",
-        "End",
-        " ",
-      ];
+    const timeout = setTimeout(async () => {
+      if (autoStartedRef.current) return;
 
-      if (scrollKeys.includes(event.key)) {
-        stopGuidedScroll();
+      autoStartedRef.current = true;
+
+      // 1. Iniciar el desplazamiento SIEMPRE
+      startGuidedScroll();
+
+      // 2. Intentar reproducir la canción
+      if (audioRef.current) {
+        try {
+          await audioRef.current.play();
+          setPlaying(true);
+        } catch (error) {
+          console.warn(
+            "El navegador bloqueó el audio automático:",
+            error
+          );
+
+          setPlaying(false);
+        }
       }
-    };
+    }, 800);
 
-    window.addEventListener("wheel", handleUserInteraction, { passive: true });
-    window.addEventListener("touchstart", handleUserInteraction, { passive: true });
-    window.addEventListener("pointerdown", handleUserInteraction);
-    window.addEventListener("keydown", handleKeyDown);
+    return () => clearTimeout(timeout);
 
-    return () => {
-      window.removeEventListener("wheel", handleUserInteraction);
-      window.removeEventListener("touchstart", handleUserInteraction);
-      window.removeEventListener("pointerdown", handleUserInteraction);
-      window.removeEventListener("keydown", handleKeyDown);
+  }, [shouldAutoPlay]);
 
-      stopGuidedScroll();
-    };
-  }, []);
-
-  // REPRODUCIR / PAUSAR
+    // REPRODUCIR / PAUSAR
   const handlePlayPause = async () => {
     if (!audioRef.current) return;
 
@@ -114,7 +115,6 @@ export default function Hero() {
       try {
         await audioRef.current.play();
 
-        // Iniciar recorrido por toda la invitación
         startGuidedScroll();
 
       } catch (error) {

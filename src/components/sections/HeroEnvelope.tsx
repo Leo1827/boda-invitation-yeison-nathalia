@@ -13,7 +13,7 @@ export default function HeroEnvelope() {
     setIsOpen(true);
 
     setTimeout(() => {
-      router.push("/invitacion");
+      router.push("/invitacion?autoplay=true");
     }, 500);
   };
 
