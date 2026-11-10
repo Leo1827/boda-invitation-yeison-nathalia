@@ -9,7 +9,7 @@ const locations = [
   {
     title: "CEREMONIA",
     date: "6 DE DICIEMBRE",
-    time: "5:40 PM",
+    time: "6:30 PM",
     place: "Parroquia del Espíritu Santo",
     mapUrl: "#",
     icon: (
